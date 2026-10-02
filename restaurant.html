@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Restaurant | Rajasthani Hotel And Restaurant</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <div class="wrap">
+                <a class="logo" href="index.html">Rajasthani Hotel &amp; Restaurant</a>
+                <button id="burger" aria-label="Menu">☰</button>
+                <div class="links">
+                    <a href="index.html" class="">Home</a>
+                    <a href="restaurant.html" class="on">Restaurant</a>
+                    <a href="hotel.html" class="">Hotel</a>
+                    <a href="login.html" class="cta">Login / Sign Up</a>
+                </div>
+            </div>
+        </nav>
+        <main class="wrap" style="padding:2.5rem 0 6rem">
+            <h2>Our menu</h2>
+            <p style="color:var(--mute)">Pure vegetarian. Pick your dishes and order.</p>
+            <div class="chips" id="chips"></div>
+            <div class="grid" id="items"></div>
+        </main>
+        <button class="btn" id="cartbtn"></button>
+        <div class="drawer" id="drawer">
+            <div class="sheet">
+                <div class="row" style="justify-content:space-between;align-items:center">
+                    <h2>Your order</h2>
+                    <button class="btn line" data-close="1">Close</button>
+                </div>
+                <div id="lines"></div>
+                <div id="sum"></div>
+            </div>
+        </div>
+        <form id="checkout">
+            <h3>Checkout</h3>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+            <label for="address">Address</label>
+            <textarea id="address" required></textarea>
+            <label for="payment">Payment Method</label>
+            <select id="payment" required>
+                <option value="">Select a payment method</option>
+                <option value="cash">Cash on Delivery</option>
+                <option value="card">Credit/Debit Card</option>
+            </select>
+            <button class="btn" type="submit">Place Order</button>
+        </form>
+        <script src="app.js"></script>
+    </body>
+</html>
