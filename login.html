@@ -1,57 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Login | Rajasthani Hotel And Restaurant</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav>
-            <div class="wrap">
-                <a class="logo" href="index.html">Rajasthani Hotel &amp; Restaurant</a>
-                <button id="burger" aria-label="Menu">☰</button>
-                <div class="links">
-                    <a href="index.html" class="">Home</a>
-                    <a href="restaurant.html" class="">Restaurant</a>
-                    <a href="hotel.html" class="">Hotel</a>
-                    <a href="login.html" class="cta">Login / Sign Up</a>
-                </div>
-            </div>
-        </nav>
-        <main class="wrap">
-            <div class="auth panel">
-                <div class="tabs">
-                    <button class="on" data-t="in">Login</button>
-                    <button data-t="up">Sign Up</button>
-                </div>
-                <form id="f">
-                    <div id="upf">
-                        <label for="n">Full name</label>
-                        <input id="n" autocomplete="name">
-                        <label for="p">Phone number</label>
-                        <input id="p" type="tel" inputmode="tel" autocomplete="tel">
-                    </div>
-                    <label for="e">Email ID</label>
-                    <input id="e" type="email" autocomplete="email" required>
-                    <label for="pw">Password</label>
-                    <input id="pw" type="password" minlength="6" required autocomplete="current-password">
-                    <button class="btn" style="width:100%;margin-top:1.2rem" id="sub">Login</button>
-                </form>
-                <p class="or">or</p>
-                <button class="btn g" id="gb">Login / Sign Up With Google</button>
-            </div>
-        </main>
-        <footer>
-            <p>Rajasthani Hotel And Restaurant · Station Road, Civil Lines, Sitapur, UP 261001</p>
-        </footer>
-        <script src="app.js"></script>
-        <script>
-            document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>set(b.dataset.t));
-            f.onsubmit=e=>{e.preventDefault();if(m=='up'&&(!n.value.trim()||!/^\d{10}$/.test(p.value.replace(/\D/g,'').slice(-10))))return toast('Enter your full name and a 10-digit phone number');/* TODO backend: call your auth API here */toast(m=='in'?'Logged in (demo)':'Account created (demo)')};
-            gb.onclick=()=>toast('Google sign-in: connect your backend here')
-        </script>
-    </body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login | Rajasthani Hotel And Restaurant</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+<nav><div class="wrap"><a class="logo" href="index.html">Rajasthani Hotel &amp; Restaurant</a><button id="burger" aria-label="Menu">☰</button><div class="links"><a href="index.html" class="">Home</a><a href="restaurant.html" class="">Restaurant</a><a href="hotel.html" class="">Hotel</a><a href="login.html" class="cta">Login / Sign Up</a></div></div></nav><main class="wrap"><div class="auth panel"><div class="tabs"><button class="on" data-t="in">Login</button><button data-t="up">Sign Up</button></div>
+<form id="f"><div id="upf"><label for="n">Full name</label><input id="n" autocomplete="name"><label for="p">Phone number</label><input id="p" type="tel" inputmode="tel" autocomplete="tel"></div>
+<label for="e">Email ID</label><input id="e" type="email" autocomplete="email" required><label for="pw">Password</label><input id="pw" type="password" minlength="6" required autocomplete="current-password">
+<button class="btn" style="width:100%;margin-top:1.2rem" id="sub">Login</button></form><p class="or">or</p><button class="btn g" id="gb">Login / Sign Up With Google</button></div></main><footer><p>Rajasthani Hotel And Restaurant · Station Road, Civil Lines, Sitapur, UP 261001</p></footer><script src="app.js"></script><script>
+let m='in';const up=document.getElementById('upf');const set=x=>{m=x;up.classList.toggle('hide',x=='in');document.getElementById('sub').textContent=x=='in'?'Login':'Create account';document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t==x))};set('in');
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>set(b.dataset.t));
+f.onsubmit=e=>{e.preventDefault();if(m=='up'&&(!n.value.trim()||!/^\d{10}$/.test(p.value.replace(/\D/g,'').slice(-10))))return toast('Enter your full name and a 10-digit phone number');/* TODO backend: call your auth API here */toast(m=='in'?'Logged in (demo)':'Account created (demo)')};
+gb.onclick=()=>toast('Google sign-in: connect your backend here')</script></body></html>
